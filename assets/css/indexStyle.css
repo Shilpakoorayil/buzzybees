@@ -1,0 +1,325 @@
+/* Header Top Background */
+
+.first_nav_theme{
+   background: #aa64a8; 
+     padding: 8px 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.items {
+    display: flex;
+    gap: 25px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icons */
+.icon i {
+    color: #fff;
+    font-size: 15px;
+}
+
+/* Text */
+.mail p {
+    margin: 0;
+}
+
+.mail a {
+    color: #ffffff;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.mail a:hover {
+    color: hsl(34, 100%, 50%); 
+}
+
+/* For Small Screens (Hide header top bar) */
+@media (max-width: 992px) {
+    .first_nav {
+        display: none !important;
+    }
+}
+/* ...................................................... */
+/* Header Bottom Container */
+/* Basic Reset */
+
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: ; */
+  padding: 12px 12px;
+  border-bottom: 1px solid #e3e3e3;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  
+}
+
+/* Logo */
+.logo img {
+  height: 120px;
+  width: 120px;
+}
+
+/* Links Container */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+/* Links Style */
+.nav-links li a {
+
+    text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+        
+  transition: 0.3s ease;
+  padding: 8px 0; 
+}
+
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+.active{
+   font-weight: 8 0;
+  color: #e06704;
+ 
+}
+.dactive{
+    color: #aa64a8;  
+}
+.getIntouch{
+  height: 100px;
+  width:100px;
+  border-radius: 25px;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #0c1923;
+  margin: 5px 0;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 976px) {
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 220px;
+    background: #ffffff;
+    flex-direction: column;
+    text-align: right;
+    padding: 20px;
+    gap: 18px;
+    display: none;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  .getIntouch-btn {
+    display: none;
+  }
+}
+
+/* ................................................. */
+/* get in touch */
+/* Button Wrapper */
+.getIntouch-btn .bd-btn {
+  position: relative;
+  display: inline-block;
+  padding: 20px 55px;
+  background: #fd811b; 
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 35px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+/* Text container */
+.bd-btn-inner {
+  position: relative;
+  display: inline-block;
+}
+
+/* Normal text */
+.bd-btn-normal {
+  display: inline-block;
+  transition: 0.3s;
+}
+
+/* Hover text (hidden initially) */
+.bd-btn-hover {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+/* Hover Effect */
+.bd-btn:hover {
+  background: #aa64a8;
+  color: #f4f0ed;
+}
+
+.bd-btn:hover .bd-btn-normal {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.bd-btn:hover .bd-btn-hover {
+  top: 0;
+  opacity: 1;
+}
+/* ........................................... */
+
+
+
+/* .....................FOOTER SECTION.................................. */
+
+.bd-footer-area {
+  position: relative;
+  background:linear-gradient(100.88deg, #EBFFFE 0.6%, #FFF6EB 100%);
+  color:#fc77a4;
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+/* Background overlay gradient */
+.bd-gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #aa64a8 0%, #8b4d8a 100%);
+  opacity: 0.85;
+  z-index: -1;
+}
+
+/* Footer Widget Titles */
+.bd-footer-widget-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fc77a4;
+  margin-bottom: 25px;
+}
+
+/* Footer Text */
+.bd-footer-widget-content p {
+  line-height: 1.6;
+  font-size: 15px;
+  color: #0c0a0a;
+}
+
+/* Footer Links */
+.bd-footer-list ul li a {
+  text-decoration: none;
+  color: #0e0a0b;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.bd-footer-list ul li a:hover {
+  color: #ffe66d; /* soft yellow hover */
+}
+
+/* Social Icons */
+.bd-footer-bottom-social ul {
+  display: flex;
+  gap: 12px;
+  padding-left: 0;
+}
+
+.bd-footer-bottom-social ul li {
+  list-style: none;
+}
+
+.bd-footer-bottom-social a {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  color:#fc77a4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.bd-footer-bottom-social a:hover {
+  background: #ffe66d;
+  color: #fc77a4;
+}
+
+/* Contact List */
+.bd-footer-contact ul li {
+  list-style: none;
+  margin-bottom: 12px;
+  color: #010101;
+  font-size: 15px;
+}
+
+.bd-footer-contact ul li i {
+  margin-right: 8px;
+  color: #6d77ff;
+}
+
+/* Footer Copyright */
+.bd-footer-copyright {
+  background: #8b4d8a;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+}
+
+.bd-footer-copyright p {
+  margin: 0;
+  font-size: 14px;
+  color: #fbeaff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .bd-footer-widget {
+    text-align: center;
+  }
+
+  .bd-footer-bottom-social ul {
+    justify-content: center;
+  }
+}
+

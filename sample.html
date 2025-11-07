@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact + Map — Grid (Responsive)</title>
+  <style>
+    :root{
+      --gap:20px;
+      --radius:10px;
+      --accent:#2563eb;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --muted:#6b7280;
+    }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{background:var(--bg);display:flex;align-items:center;justify-content:center;padding:28px}
+
+    .wrapper{max-width:1200px;width:100%;}
+
+    /* grid container — two columns on wide screens, single column on small screens */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:var(--gap);
+      /* Make both cells equal height by making each grid row 1fr */
+      grid-auto-rows:1fr;
+    }
+
+    /* card styles (both the form and the map are cards that will match heights) */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 6px 20px rgba(16,24,40,0.06);
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      min-height:280px; /* sensible minimum */
+      overflow:hidden;
+    }
+
+    /* FORM specific */
+    form{display:flex;flex-direction:column;gap:12px;height:100%;}
+    .form-row{display:flex;gap:12px}
+    .form-row .field{flex:1}
+    label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    input[type="text"],input[type="email"],textarea{
+      width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;background:transparent;font-size:15px;box-sizing:border-box
+    }
+    textarea{resize:vertical;min-height:120px}
+    .actions{margin-top:auto;display:flex;gap:12px;align-items:center}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+    button.secondary{background:#eef2ff;color:var(--accent)}
+
+    /* MAP specific — make iframe and its wrapper fill the card */
+    .map-wrap{display:flex;flex-direction:column;height:100%;overflow:hidden}
+    .map-header{margin-bottom:12px}
+    .map-iframe{flex:1;border:0;width:100%;height:100%;min-height:180px}
+
+    /* small-screen responsive: stack columns and make them auto height */
+    @media (max-width:880px){
+      .contact-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+      body{padding:18px}
+    }
+
+    /* tiny helper for small touches */
+    .muted{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h2 style="margin:0 0 14px 0">Contact us</h2>
+    <div class="contact-grid">
+
+      <!-- Contact form card -->
+      <section class="card" aria-labelledby="contact_title">
+        <div>
+          <h3 id="contact_title" style="margin:0 0 8px 0">Send a message</h3>
+          <p class="muted" style="margin:0 0 16px 0">We usually reply within 24 hours.</p>
+        </div>
+
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="text" placeholder="+91 98765 43210" />
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Send message</button>
+            <button type="button" class="secondary" onclick="document.getElementById('contactForm').reset()">Clear</button>
+            <span style="margin-left:auto" class="muted">Or call us at <strong>+91 12345 67890</strong></span>
+          </div>
+        </form>
+      </section>
+
+      <!-- Map card: replace the iframe src with your Google Maps embed link -->
+      <aside class="card map-wrap" aria-label="Our location on map">
+        <div class="map-header">
+          <h3 style="margin:0 0 6px 0">Our location</h3>
+          <p class="muted" style="margin:0">Open Mon–Fri, 9:00 — 18:00</p>
+        </div>
+
+        <!-- SAMPLE EMBED: replace the src below with your own Google Maps embed URL from 'Share → Embed a map' -->
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15650.841126027588!2d75.8265721!3d11.2826945!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65ea14d8b88fd%3A0xa9514b3b2e52474b!2sMalaparamba%2C%20Kozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1762325235691!5m2!1sen!2sin"
+ width="600" height="450" style="border:0;" allowfullscreen="" 
+ loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <script>
+    // Sample client-side form handler (replace with real submission: fetch/XHR/your backend)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const payload = Object.fromEntries(data.entries());
+      // Demo: show a friendly confirmation
+      alert('Thanks, ' + (payload.name||'there') + '! Your message has been recorded (demo).');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
