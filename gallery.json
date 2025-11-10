@@ -1,0 +1,12 @@
+{
+  "gallery": [
+    { "src": "./assets/img/gallery/pexels-alexander-dummer-37646-1912868.jpg", "alt": "buzzy bee 1" },
+    { "src": "./assets/img/gallery/pexels-yankrukov-8613071.jpg", "alt": "buzzy bee 2" },
+    { "src": "./assets/img/gallery/pexels-yankrukov-8613146.jpg", "alt": "buzzy bee 3" },
+    { "src": "./assets/img/gallery/pexels-kseniachernaya-8535193.jpg", "alt": "buzzy bee 4" },
+    { "src": "./assets/img/gallery/pexels-mikhail-nilov-8923566.jpg", "alt": "buzzy bee 1" },
+    { "src": "./assets/img/gallery/pexels-yankrukov-8613146.jpg", "alt": "buzzy bee 2" },
+    { "src": "./assets/img/gallery/pexels-pavel-danilyuk-8422191.jpg", "alt": "buzzy bee 3" },
+    { "src": "./assets/img/gallery/pexels-pavel-danilyuk-8422248.jpg", "alt": "buzzy bee 4" }
+  ]
+}

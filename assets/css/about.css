@@ -1,0 +1,604 @@
+.bd-breadcrumb-bg {
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   opacity: 0.95; /* optional */
+}
+
+/* Add a white overlay for better readability */
+.bd-breadcrumb-area::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: rgba(255, 255, 255, 0.4); /* adjust brightness */
+   z-index: 0;
+}
+.bd-breadcrumb-wrapper,
+.bd-breadcrumb-shape {
+   position: relative;
+   z-index: 2;
+}
+/* Wave Background Area */
+.bd-wave-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.bd-wave {
+  position: relative;
+  display: block;
+  width: 200%;
+  height: 120px;
+  background: url('assets/img/bg/wave-line.png') repeat-x;
+  background-size: contain;
+  animation: waveMove 12s linear infinite;
+  opacity: 0.9;
+}
+
+/* Second wave (layered wave effect) */
+.bd-wave:nth-child(2) {
+  animation: waveMove2 18s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes waveMove2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-60%); }
+}
+/* ...................promotion area.................. */
+/* Light Pink Background */
+.light-pink-bg {
+  background: white;
+  border-radius: 25px;
+  padding: 50px 0;
+  position: relative;
+}
+
+/* Soft Rounded Image */
+.rounded-promo-img {
+  border-radius: 25px;
+  box-shadow: 0px 10px 25px rgba(255, 155, 187, 0.35);
+}
+
+/* Paragraph Styling */
+.promo-text {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Cute Floating Shape Animation */
+.floating-shape {
+  /* animation: floatUpDown 3s ease-in-out infinite; */
+  animation: floatUpDown 1s ease-in-out infinite;
+  
+}
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Optional Title Styling */
+.bd-section-title {
+  color: #FF7AAF !important;
+  font-weight: 700;
+}
+
+/* ...................promation area end.............. */
+
+/* ...Features area......starts......... */
+/* Base Section */
+.bd-feature-area {
+  background: white;
+  /* background: linear-gradient(135deg, #ffd86f, #ffac81); */
+  overflow: hidden;
+  position: relative;
+}
+
+.bd-feature-bottom-shape img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.9;
+}
+
+/* Feature Card */
+.bd-feature-card {
+  background:rgb(4, 68, 89);
+  border-radius: 20px;
+  padding: 30px 20px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.bd-feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 136, 0, 0.3);
+  cursor: pointer;
+  background-color:lightskyblue;
+}
+
+/* Icon or Logo */
+.bd-feature-icon {
+  width: 90px;
+  height: 90px;
+  background: #fff8dc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+  font-size: 40px;
+  color: #ff9b00;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.bd-feature-icon img.feature-logo {
+  width: 60px;
+  animation: waveLogo 3s infinite ease-in-out;
+}
+
+/* Rainbow Hover Effect */
+.rainbow-hover:hover {
+  animation: rainbowGlow 3s linear infinite;
+  background: yellow;
+  color: #00ff15;
+  cursor: pointer;
+}
+
+/* Titles & Text */
+.bd-feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  color:#aa64a8;
+  margin-bottom: 10px;
+}
+
+.bd-feature-card p {
+  color: white;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Bee Floating Animation */
+.bee-float {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  animation: beeFly 18s linear infinite;
+}
+
+.bee-img {
+  width: 100px;
+  filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.3));
+}
+
+/* Animations */
+@keyframes rainbowGlow {
+  0% { box-shadow: 0 0 15px red; }
+  25% { box-shadow: 0 0 15px orange; }
+  50% { box-shadow: 0 0 15px yellow; }
+  75% { box-shadow: 0 0 15px green; }
+  100% { box-shadow: 0 0 15px blue; }
+}
+
+@keyframes waveLogo {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+@keyframes beeFly {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(30vw) translateY(10vh); }
+  50% { transform: translateX(60vw) translateY(-5vh); }
+  75% { transform: translateX(90vw) translateY(10vh); }
+  100% { transform: translateX(110vw) translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .bd-feature-card {
+    margin-bottom: 20px;
+  }
+  .bee-float {
+    display: none;
+  }
+}
+
+
+/* ................Features area ends......... */
+
+
+/*--------------------------------
+  TEACHER AREA STYLES
+/* ================================
+   TEACHER AREA
+===================================*/
+.bd-teacher-area {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+}
+
+.bd-teacher {
+  background: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.bd-teacher:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.bd-teacher-thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+}
+
+.bd-teacher-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.bd-teacher:hover .bd-teacher-thumb img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.bd-teacher-content-wrapper {
+  padding: 10px 0;
+}
+
+.bd-teacher-title a {
+  color: #222;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bd-teacher-title a:hover {
+  color: #f7b731;
+}
+
+.bd-teacher-des {
+  display: block;
+  color: #666;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+/* ================================
+   SOCIAL ICONS
+===================================*/
+.bd-teacher-social ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bd-teacher-social ul li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7b731;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.bd-teacher-social ul li a:hover {
+  background: #222;
+  transform: scale(1.1);
+}
+ 
+.teachers_row{
+display: flex;
+flex-direction: row;
+gap: 40px;
+}
+
+
+/* ================================
+   PAGINATION DOTS
+===================================*/
+.bd-teacher-pagination {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ddd;
+  opacity: 1;
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f7b731;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(247, 183, 49, 0.6);
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+===================================*/
+@media (max-width: 768px) {
+  .bd-teacher {
+    padding: 15px;
+  }
+
+  .bd-teacher-thumb {
+    width: 130px;
+    height: 130px;
+  }
+
+  .bd-teacher-title a {
+    font-size: 18px;
+  }
+}
+/* ......................TESTIMONY AREA....................... */
+/* ================================
+   TESTIMONIAL AREA BASE
+===================================*/
+.bd-testimonial-area {
+  position: relative;
+  background: linear-gradient(135deg, #f7b731 0%, #ffde7d 100%);
+  overflow: hidden;
+  color: #fff;
+}
+
+.bd-testimonial-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.bd-testimonial-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.bd-section-title-wrapper.is-white h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 36px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+/* ================================
+   TESTIMONIAL BOX
+===================================*/
+.bd-testimonial {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  backdrop-filter: blur(8px);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.bd-testimonial:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating glowing border animation */
+.bd-testimonial::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #fff, #f7b731, #fff) border-box;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: borderGlow 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes borderGlow {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
+/* ================================
+   TESTIMONIAL CONTENT
+===================================*/
+.bd-testimonial-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  font-weight: 400;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   RATING STARS
+===================================*/
+.bd-testimonial-rating i {
+  color: #ffed00;
+  margin-right: 4px;
+  font-size: 16px;
+  animation: starTwinkle 1.5s infinite alternate;
+}
+
+@keyframes starTwinkle {
+  from { transform: scale(1); opacity: 0.8; }
+  to { transform: scale(1.2); opacity: 1; }
+}
+
+/* ================================
+   AVATAR SECTION
+===================================*/
+.bd-testimonial-avatar {
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.bd-testimonial-avatar-thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.bd-testimonial-avatar-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bd-testimonial-avatar-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+/* ================================
+   QUOTE ICON
+===================================*/
+.bd-testimonial-quote i {
+  font-size: 40px;
+  color: #fff;
+  opacity: 0.3;
+  animation: floatQuote 3s ease-in-out infinite;
+}
+
+@keyframes floatQuote {
+  0% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-8px); opacity: 0.6; }
+  100% { transform: translateY(0); opacity: 0.3; }
+}
+
+/* ================================
+   PULSE VIDEO BUTTON
+===================================*/
+.bd-testimonial-video {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.bd-testimonial-video-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #31f738;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 28px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.bd-testimonial-video-btn a:hover {
+  transform: scale(1.1);
+  color: #fff;
+  background: yellow;
+}
+
+/* Pulse animation */
+.bd-pulse-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: pulseRing 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ================================
+   PAGINATION DOTS
+===================================*/
+.bd-testimonial-pagination {
+  margin-top: 40px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+  box-shadow: 0 0 10px #fff;
+  transform: scale(1.3);
+}
+
+/* ================================
+   RESPONSIVE
+===================================*/
+@media (max-width: 992px) {
+  .bd-testimonial-video {
+    display: none;
+  }
+  .bd-testimonial {
+    padding: 25px 20px;
+  }
+  .bd-section-title-wrapper h2 {
+    font-size: 28px;
+  }
+}

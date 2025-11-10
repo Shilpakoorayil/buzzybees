@@ -1,0 +1,253 @@
+/* ====================================
+   STICKY FILTER BAR
+==================================== */
+.bd-sticky-filter {
+  position: sticky;
+  top: 80px; /* adjust depending on your navbar height */
+  z-index: 99;
+  background: #fffbee;
+  transition: all 0.4s ease;
+}
+
+/* When scrolling, make it compact */
+.bd-sticky-filter.scrolled {
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(247, 183, 49, 0.4);
+  background: #fff8d4;
+  transform: scale(0.98);
+}
+
+/* ====================================
+   FILTER & SEARCH (same as before)
+==================================== */
+.bd-program-filter-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 15px 25px;
+  border-radius: 50px;
+  box-shadow: 0 5px 20px rgba(247, 183, 49, 0.2);
+}
+
+.bd-search-input {
+  padding: 10px 20px;
+  width: 250px;
+  border: 2px solid #f7b731;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.bd-search-input:focus {
+  box-shadow: 0 0 10px rgba(247, 183, 49, 0.4);
+}
+
+.bd-filter-select {
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 2px solid #f7b731;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.bd-filter-select:hover {
+  background: #f7b731;
+  color: #fff;
+}
+.single_row{
+    display: contents;
+    flex-direction: row;
+}
+/* ...........................check */
+/* =======================================
+   🐝 PROGRAM SECTION STYLING
+======================================= */
+.bd-program-area {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fffdf5 0%, #fffbee 100%);
+}
+
+/* Section title */
+.bd-section-title-wrapper h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.bd-section-title-wrapper p {
+  font-size: 16px;
+  color: #666;
+  max-width: 500px;
+}
+
+/* =======================================
+   🧭 SWIPER NAVIGATION BUTTONS
+======================================= */
+.bd-swiper-navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.bd-swiper-navigation button {
+  background: #ffbe33;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(247, 183, 49, 0.4);
+}
+
+.bd-swiper-navigation button:hover {
+  background: #ffce66;
+  transform: scale(1.1);
+}
+
+/* =======================================
+   📚 PROGRAM CARD
+======================================= */
+.bd-program {
+  position: relative;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.bd-program:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 35px rgba(247, 183, 49, 0.3);
+}
+
+/* Thumbnail image */
+.bd-program-thumb-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 5px solid #f7b731;
+  border-radius: 25px 25px 0 0;
+}
+
+.bd-program-thumb img {
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.bd-program:hover .bd-program-thumb img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* Decorative SVG shape */
+.bd-program-shape svg {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  opacity: 0.8;
+  animation: floatWave 4s ease-in-out infinite;
+}
+
+@keyframes floatWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* =======================================
+   🧾 PROGRAM CONTENT
+======================================= */
+.bd-program-content {
+  padding: 25px 20px 10px;
+}
+
+.bd-program-title a {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.bd-program-title a:hover {
+  color: #f7b731;
+}
+
+.bd-program-content p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* =======================================
+   🕒 PROGRAM INFO FOOTER
+======================================= */
+.bd-program-info-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(90deg, #f7b731, #ffd972);
+  color: #fff;
+  padding: 15px 10px;
+  border-radius: 0 0 25px 25px;
+}
+
+.bd-program-info-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* =======================================
+   ✨ ANIMATIONS
+======================================= */
+.bd-program:hover .bd-program-shape svg {
+  transform: rotate(5deg) scale(1.05);
+  transition: all 0.4s ease;
+}
+.more_programs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: palevioletred;
+    font-size: 50px;
+    font-weight: bolder;
+}
+      .program_para{
+        display: flex;
+        justify-content: center;
+      }
+
+/* =======================================
+   📱 RESPONSIVE
+======================================= */
+@media (max-width: 992px) {
+  .bd-section-title-wrapper h2 {
+    font-size: 32px;
+  }
+  .bd-program-thumb img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bd-program-info-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

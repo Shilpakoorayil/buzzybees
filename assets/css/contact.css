@@ -27,7 +27,7 @@
 }
 
 .contact-box {
-    background: #e4e2c7;
+    background: linear-gradient(lightgreen,rgb(67, 236, 67),green);
     padding: 25px;
     text-align: center;
     border-radius: 12px;
@@ -35,6 +35,7 @@
     flex: 1;
     transition: 0.4s;
     cursor: pointer;
+    
 }
 
 
@@ -51,69 +52,45 @@
 .contact-box:hover {
     transform: translateY(-5px);
     box-shadow: 0px 10px 30px rgba(239, 110, 11, 0.12);
+
+  
 }
 @media (max-width: 768px) {
   .contact-box-container {
       flex-direction: column;
   }
 }
-/* ..........................Contact details and Google Map....................... */
-
-
-
-
+/* ..........................Contact details and Google Map ....................... */
  .main_frame {
-            /* display: flex;
-            flex-wrap: wrap; */
-             /* Allows wrapping on smaller screens */
-            background-color: rgb(241, 238, 244);
-            /* height: 660px;
-            width: auto; */
-
-
-             display: flex;
-    justify-content: space-between;
-   
-    margin-top: 50px;
-        }
+        
+            background-color:white;
+            display: flex;
+          }
 
         .main_div {
             display: flex;
-            /* justify-content: center; */
-            /* align-items: center; */
             box-sizing: border-box;
-            border:silver;
+            border:white;
              height: auto;
-            width: 50%;
-
-        }
+            margin-left: 40px;
+              }
         .bd-contact-map{
-
-           height: auto;
-            width: 50%;
-             border-radius: 20px;
+             height: auto;
+            border-radius: 20px;
+           margin-left: 40px;
+           width: 500px;
         }
-
         .name {
-            display: flex;
-           flex-wrap: wrap; 
-         
-            
-
-
+           display: flex;
+          gap: 60px;
+        
         }
-
-        .email .phone .message .first_name .last_name .message  .submit{
+        .email .phone .message .first_name .last_name .message {
             display: flex;
             gap: 30px;
-
+            border: none;
         }
-
-        .bd-contact-map {
-          width: 50%;
-        }
-
-        .form {
+       .form {
             width: 100%;   
             height: 650px;
             border: 1px solid rgb(226, 213, 213);
@@ -123,36 +100,76 @@
             outline: none;
             background-color: white;
             border-bottom: 30px;
-        }
-
-        input,textarea .name{
-            border-radius: 20px;
-            /* outline: none; */
-            width: 95%;
-            margin-bottom: 15px;
-            border-top: 0;
-            border-left: 0;
-            border-right: 0;
-            font-size: 15px;
-
-
-        }
-
-        /* .error {
-            border-radius: 50px;
-            border: none;
-        } */
+        } 
+       input[type="text"],input[type="email"]{
+           border-radius: 30px;
+           
+           }
+           .phone,textarea{
+            border-radius: 10px;  
+          
+           }
+           
         .error {
             color: red;
             font-size: 14px;
         }
+        .submitt{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      
+
+        input[type="submit"]{
+            border-radius: 20px; 
+           
+            /* padding: 10px; */
+            height: 40px;
+            width: 120px;
+
+        }
         @media (max-width: 768px) {
-        .main_div {
-        
-         flex-direction: column; 
-     
-  }
-
- 
-
+        .main_frame {
+        display: block;
+         }
 }
+/* .........................breadcrumps........... */
+.breadcrumb-section {
+    position: relative;
+    text-align: center;
+}
+
+.breadcrumb-section img {
+    width: 100%;
+    height: 700px;
+}
+
+.breadcrumb-section .breadcrumb {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#topBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 60%;
+  background-color: rgb(76, 73, 73);
+  color: white;
+  display: none;
+}
+@media (max-width: 480px) {
+   
+
+
+    .breadcrumb-section img {
+        width:100%;
+        height: 400px;
+    }
+}
+

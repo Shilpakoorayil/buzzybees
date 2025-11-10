@@ -65,9 +65,216 @@
 
     /* tiny helper for small touches */
     .muted{color:var(--muted);font-size:13px}
+
+/* ........................................,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, */
+/* ================================
+   BASIC NAVBAR STYLING
+===================================*/
+.bd-navbar {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #f7b731, #ffde7d);
+  box-shadow: 0 5px 20px rgba(247, 183, 49, 0.3);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  height: 45px;
+}
+
+.navbar-logo span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* ================================
+   MENU STYLES
+===================================*/
+.navbar-menu ul {
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-menu ul li a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background: #fff;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.navbar-menu ul li a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   WAVE EFFECT AT THE BOTTOM
+===================================*/
+.navbar-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.navbar-wave svg {
+  position: relative;
+  display: block;
+  width: calc(150% + 1.3px);
+  height: 60px;
+  animation: waveMotion 6s infinite linear;
+}
+
+.navbar-wave path {
+  fill: #fffbee;
+  opacity: 0.9;
+}
+
+/* Wave animation */
+@keyframes waveMotion {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+/* ================================
+   RESPONSIVE NAVBAR
+===================================*/
+.navbar-toggle {
+  display: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    width: 100%;
+    background: #f7b731;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .navbar-menu ul {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu.show {
+    display: block;
+    animation: fadeInDown 0.4s ease forwards;
+  }
+}
+
+/* @keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+} */
+@keyframes fadeInDown {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-80%); }
+}
+
+.navbar-wave svg {
+  animation: waveMotion 2s infinite linear;
+}
+
+
+    
   </style>
 </head>
 <body>
+<!-- ================= NAVBAR WITH WAVE EFFECT ================= -->
+<header class="bd-navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <a href="#" class="navbar-logo">
+        <img src="assets/img/logo/buzzybee-logo.png" alt="Buzzy Bee Logo">
+        <span>Buzzy Bee</span>
+      </a>
+
+      <nav class="navbar-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#teachers">Teachers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar-toggle"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </div>
+
+  <!-- Animated wave at the bottom -->
+  <div class="navbar-wave">
+    <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+      <path d="M0,10 C30,20 90,0 120,10 L120,30 L0,30 Z"></path>
+    </svg>
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="wrapper">
     <h2 style="margin:0 0 14px 0">Contact us</h2>
     <div class="contact-grid">
@@ -126,6 +333,110 @@
 
     </div>
   </div>
+  <!-- ...... gallery card start -->
+   
+<h2 class="gallery_heading">Our Gallery</h2>
+
+    <div class="container-fluid mt-5">
+        <div class="row g-19">
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-alexander-dummer-37646-1912868.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-yankrukov-8613071.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-yankrukov-8613312.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-kseniachernaya-8535193.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-mikhail-nilov-8923566.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-yankrukov-8613146.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-pavel-danilyuk-8422191.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+
+                </div>
+            </div>
+           
+             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                    <img src="./assets/img/gallery/pexels-pavel-danilyuk-8422248.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card’s content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+   <!-- gallery card end -->
 
   <script>
     // Sample client-side form handler (replace with real submission: fetch/XHR/your backend)
@@ -137,6 +448,34 @@
       alert('Thanks, ' + (payload.name||'there') + '! Your message has been recorded (demo).');
       e.target.reset();
     });
+
+
+// nav bar
+
+
+  const toggle = document.querySelector('.navbar-toggle');
+  const menu = document.querySelector('.navbar-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+  
   </script>
+
+
+
+
 </body>
 </html>
