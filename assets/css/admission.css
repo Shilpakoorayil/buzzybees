@@ -1,194 +1,166 @@
-/* ============================================
-   🐝 BUZZY BEE ADMISSION FORM STYLES
-============================================ */
-.bd-program-area {
+/* ================================================
+   🐝 Buzzy Bee - Program Routine Area Styles
+   ================================================= */
+.bd-routine-area {
+  background: linear-gradient(180deg, #fff9c4 0%, #fff59d 100%);
   position: relative;
-  background: linear-gradient(180deg, #fffbee 0%, #fff5d7 100%);
+  padding-top: 100px;
+  padding-bottom: 70px;
   overflow: hidden;
+  cursor: pointer;
 }
 
-/* Section Title */
-.bd-section-title-wrapper {
-  position: relative;
+/* Honey wave shape (optional bottom decoration) */
+.bd-routine-area::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  /* background: url("assets/img/shape/wave-section-break.png") no-repeat center/cover; */
+  opacity: 0.4;
+  cursor: pointer;
 }
 
-.bd-section-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #2b2b2b;
-  text-transform: capitalize;
+/* Section title */
+.bd-section-title-wrapper h2.bd-section-title {
+  font-family: 'Fredoka One', cursive;
+  color: #f9a825;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .bd-section-title-wrapper p {
+  color: #6d4c41;
   font-size: 16px;
-  color: #555;
-  margin-top: 10px;
+  line-height: 1.6;
+  cursor: pointer;
 }
 
-/* =============================
-   🧾 FORM STYLING
-============================= */
-#admissionForm,
-#admission-form,
-#user_registration {
-  position: relative;
-  z-index: 2;
-  background: #ffffff;
+/* Routine tables */
+.bd-routine-table {
+  background: #fffbea;
   border-radius: 20px;
-  padding: 40px 50px;
-  box-shadow: 0 8px 25px rgba(247, 183, 49, 0.25);
-}
-
-/* Input Fields */
-.bd-contact-input input,
-.bd-contact-input select,
-.bd-contact-input1 textarea {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 1.5px solid #f3d64a;
-  background: #fffef5;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-.bd-contact-input input:focus,
-.bd-contact-input select:focus,
-.bd-contact-input1 textarea:focus {
-  outline: none;
-  border-color: #ffb703;
-  box-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
-}
-
-/* Textarea */
-.bd-contact-input1 textarea {
-  min-height: 90px;
-  resize: none;
-}
-
-/* Labels */
-.bd-contact-input label,
-.bd-contact-input1 label {
-  display: block;
-  font-weight: 600;
-  color: #3c3c3c;
-  margin-bottom: 5px;
-}
-
-/* Star icon for required fields */
-.fa-star-of-life {
-  font-size: 8px;
-  color: #ffb703;
-}
-
-/* =============================
-   📂 Accordion Styling
-============================= */
-.accordion-item {
-  border: none;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(247, 183, 49, 0.15);
-}
-
-.accordion-button {
-  background-color: #ffe877;
-  color: #333;
-  font-weight: 600;
-  padding: 15px 20px;
-  font-size: 17px;
-  border: none;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #ffcf33;
-  color: #fff;
-  box-shadow: inset 0 -2px 0 #f5b800;
-}
-
-.accordion-button:focus {
-  box-shadow: none;
-}
-
-.accordion-body {
-  background-color: #fffdf5;
   padding: 25px;
-  border-top: 1px solid #fbe08a;
-}
-
-/* =============================
-   🧍 Form Checkboxes & Radio Buttons
-============================= */
-.form-check-input {
-  accent-color: #ffb703;
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
-.form-check-label {
-  font-size: 15px;
-  color: #444;
-  cursor: pointer;
-}
-
-/* =============================
-   🚀 Submit Button
-============================= */
-.bd-btn {
-  display: inline-block;
-  border: none;
-  border-radius: 50px;
-  overflow: hidden;
-  background: linear-gradient(90deg, #ffb703, #ffda58);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
   position: relative;
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 14px 40px;
-  transition: all 0.4s ease;
+  z-index: 1;
+  cursor: pointer;
 }
 
-.bd-btn:hover {
-  background: linear-gradient(90deg, #ffda58, #ffb703);
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 183, 3, 0.5);
+.bd-routine-table:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
-/* Animated ripple hover */
-.bd-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
+/* Table styling */
+.bd-routine-table table {
   width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: all 0.6s ease;
+  border-collapse: collapse;
+  cursor: pointer;
 }
 
-.bd-btn:hover::after {
-  left: 100%;
+.bd-routine-table thead {
+  background-color: #ffeb3b;
+  color: #4e342e;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-/* =============================
-   🌈 Responsive Adjustments
-============================= */
-@media (max-width: 992px) {
-  #user_registration {
-    padding: 30px 25px;
+.bd-routine-table th {
+  padding: 14px 10px;
+  text-align: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.bd-routine-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 15px;
+  color: #f57f1e;
+  cursor: pointer;
+}
+
+.bd-routine-table tr:last-child td {
+  border-bottom: none;
+  cursor: pointer;
+}
+
+/* Add soft alternating row color */
+.bd-routine-table tbody tr:nth-child(even) {
+  background-color: #eadc44;
+}
+
+/* Hover row effect */
+.bd-routine-table tbody tr:hover {
+  background: #fff9c4;
+  transition: 0.3s;
+}
+
+/* Bee icon bullet (optional for extra cuteness 🐝) */
+.bd-routine-table td:first-child::before {
+  content: "🐝 ";
+  font-size: 16px;
+  margin-right: 4px;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .bd-routine-table {
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 576px) {
-  .bd-section-title {
-    font-size: 28px;
+  .bd-section-title-wrapper h2.bd-section-title {
+    font-size: 1.6rem;
   }
-  .bd-btn {
-    width: 100%;
-    text-align: center;
-  }
+}
+/* ...................bee flying............................................. */
+.bee-fly {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  width: 70px;
+  height: 70px;
+
+  animation: flyBee 15s linear infinite;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+@keyframes flyBee {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(300px, -60px) rotate(10deg); }
+  50% { transform: translate(600px, 40px) rotate(-10deg); }
+  75% { transform: translate(900px, -30px) rotate(10deg); }
+  100% { transform: translate(2000px, 2000px) rotate(0deg);  }
+}
+.bee-fly1 {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  width: 70px;
+  height: 70px;
+
+  animation: flyBee1 15s linear infinite;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+@keyframes flyBee1 {
+  0% { transform: translate(2000px, 0PX) rotate(0deg); }
+  25% { transform: translate(900px, -30px) rotate(10deg); }
+  50% { transform: translate(200px, 500px) rotate(0deg); }
+  75% { transform: translate(900px, -30px) rotate(0deg); }
+  100% { transform: translate(1200px, 0px) rotate(0deg);  }
 }

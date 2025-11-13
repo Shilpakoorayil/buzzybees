@@ -4,6 +4,139 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+
+/* .........................breadcrumps.starts here.......... */
+
+.title_styling {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 62px;
+  font-weight: 800;
+  text-align: center;
+ 
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+  margin: 40px 0;
+  position: relative;
+}
+.breadcrumb-section {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: transform 0.8s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Overlay content */
+  .breadcrumb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    animation: fadeIn 1.5s ease;
+  }
+
+  /* Breadcrumb styling */
+  .breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+    gap: 10px;
+    list-style: none;
+    font-size: 18px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.3s ease;
+
+        i {
+          margin-right: 5px;
+          color: #fff;
+        }
+
+        &:hover {
+          color: #ffe4f4;
+          text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      &.active {
+        color: #ffe4f4;
+        font-weight: 700;
+      }
+    }
+
+    /* Divider style between breadcrumb items */
+    li + li::before {
+      content: "›";
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 8px;
+    }
+  }
+}
+
+/*   animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Responsive Design */
+@media (max-width: 768px) {
+  .breadcrumb-section {
+    height: 250px;
+
+    .breadcrumb {
+      font-size: 16px;
+      padding: 10px 18px;
+    }
+  }
+}
+
+/* .......breadcrumps end here............... */
+
+/* ..... Address and Mobile icon section ........ */
+
 .contact_main{
   display: flex;
   justify-content: center;
@@ -18,7 +151,7 @@
 
 }
 
-/* .................................CONTACT BOX.................. */
+
 .contact-box-container {
     display: flex;
     justify-content: space-between;
@@ -27,7 +160,9 @@
 }
 
 .contact-box {
-    background: linear-gradient(lightgreen,rgb(67, 236, 67),green);
+    background:#e1dede;
+    color:black;
+   
     padding: 25px;
     text-align: center;
     border-radius: 12px;
@@ -43,15 +178,15 @@
 .contact-box h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    font-weight: 600;
-    color: #aa64a8;
+    font-weight: 900;
+    color: rgb(248, 15, 201);
 }
 
 
 
 .contact-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 10px 30px rgba(239, 110, 11, 0.12);
+    box-shadow: 0px 10px 30px rgb(247, 195, 39);
 
   
 }
@@ -60,116 +195,201 @@
       flex-direction: column;
   }
 }
-/* ..........................Contact details and Google Map ....................... */
- .main_frame {
-        
-            background-color:white;
-            display: flex;
-          }
+/* ..........Address and Mobile icon section  ends here....................... */
 
-        .main_div {
-            display: flex;
-            box-sizing: border-box;
-            border:white;
-             height: auto;
-            margin-left: 40px;
-              }
-        .bd-contact-map{
-             height: auto;
-            border-radius: 20px;
-           margin-left: 40px;
-           width: 500px;
-        }
-        .name {
-           display: flex;
-          gap: 60px;
-        
-        }
-        .email .phone .message .first_name .last_name .message {
-            display: flex;
-            gap: 30px;
-            border: none;
-        }
-       .form {
-            width: 100%;   
-            height: 650px;
-            border: 1px solid rgb(226, 213, 213);
-            padding: 20px;
-            gap: 40;
-            border-radius: 20px;
-            outline: none;
-            background-color: white;
-            border-bottom: 30px;
-        } 
-       input[type="text"],input[type="email"]{
-           border-radius: 30px;
-           
-           }
-           .phone,textarea{
-            border-radius: 10px;  
-          
-           }
-           
-        .error {
-            color: red;
-            font-size: 14px;
-        }
-        .submitt{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-      
 
-        input[type="submit"]{
-            border-radius: 20px; 
-           
-            /* padding: 10px; */
-            height: 40px;
-            width: 120px;
+/* ..........................Contact details and Google Map start .............. */
+ .main_contact_googlemap{
+    display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap; 
+  padding: 20px;
 
-        }
-        @media (max-width: 768px) {
-        .main_frame {
-        display: block;
-         }
+ }
+ .google_map {
+   flex: 1;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100vh;
 }
-/* .........................breadcrumps........... */
-.breadcrumb-section {
-    position: relative;
-    text-align: center;
+.google_map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
 }
 
-.breadcrumb-section img {
-    width: 100%;
-    height: 700px;
+.contact_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   flex: 1;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5a6d8, #f8eeee);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
 }
 
-.breadcrumb-section .breadcrumb {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translateX(-50%);
+/* ...form wrapper..... */
+.form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 650px;
+  width: 100%;
+  transition: 0.3s ease;
 }
-#topBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  font-size: 20px;
-  height: 40px;
-  width: 40px;
-  border-radius: 60%;
-  background-color: rgb(76, 73, 73);
+
+.form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 0, 162, 0.2);
+}
+
+/* ....... Form Heading .......*/
+.form h1 {
+  text-align: center;
+  color: #ff00a2;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ff00a2;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(255, 0, 162, 0.3);
+}
+
+/* .....Layouts..... */
+.new_class_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Name input field in one row */
+.name {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.name .first_name,
+.name .last_name {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* .....error message ....... */
+.error {
+  color: #ff0040;
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
+/* ....Submit button....... */
+.submitt {
+  text-align: center;
+}
+
+.submitt input[type="submit"] {
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff00a2;
   color: white;
-  display: none;
-}
-@media (max-width: 480px) {
-   
-
-
-    .breadcrumb-section img {
-        width:100%;
-        height: 400px;
-    }
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.submitt input[type="submit"]:hover {
+  background-color: #d60086;
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 600px) {
+  .form {
+    padding: 25px;
+  }
+
+  .name {
+    flex-direction: column;
+  }
+
+  .submitt input[type="submit"] {
+    width: 100%;
+  }
+}
+/* ....google form and contact form end here.......... */
+
+/* ......animations........ */
+.image-gallery {
+  background-color: #fff8fc; /* soft preschool tone */
+  padding: 40px 0;
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-container img {
+  height: 300px;
+  width: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(255, 0, 162, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* 🐝 Hover Animation */
+.gallery-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 0, 162, 0.4);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .gallery-container img {
+    height: 200px;
+    width: auto;
+  }
+}
+/* ......................ends.................... */

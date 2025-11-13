@@ -207,6 +207,8 @@
   opacity: 1;
 }
 /* ..............Main part............................. */
+
+
 .bd-wave-wrapper-3 {
   position: relative;
   height: 120px;          /* Change height if needed */
@@ -247,6 +249,61 @@
 }
 
 /* ...........................promotion................................... */
+/* ================================
+   🌈 Section Title Styling
+================================ */
+.bd-section-title-wrapper {
+  text-align: left; /* use center if needed */
+  max-width: 650px;
+  margin-bottom: 35px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bd-section-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ff00a2;
+  position: relative;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+
+
+/* Paragraph text */
+.bd-section-title-wrapper p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .bd-section-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .bd-section-title::after {
+    margin: 10px auto;
+  }
+
+  .bd-section-title-wrapper {
+    text-align: center;
+  }
+
+  .bd-section-title-wrapper p {
+    font-size: 16px;
+  }
+}
+
+
 .bd-promotion-counter-wrapper {
   display: flex;
   gap: 40px;
@@ -296,48 +353,89 @@
   0% { transform: translateY(0); }
   100% { transform: translateY(-6px); }
 }
-/* ......................................programs...................... */
-.section-title {
-  font-size: 38px;
-  font-weight: 700;
-  color: #262626;
-  position: relative;
-  display: inline-block;
+
+
+/* ................................Our .programs...................... */
+
+/*  Program Carousel Style.... */
+.bd-program-carousel {
+  background-color: #f2c6df;
+  height: 560px;
 }
 
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff00a2;
+  margin-bottom: 30px;
+}
+
+/* Card Style */
 .program-card {
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
-  transition: transform .4s ease, box-shadow .4s ease;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 0, 162, 0.15);
+  padding: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .program-card img {
-  transition: transform .5s ease;
-}
-
-.program-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+  transition: transform 0.4s ease;
 }
 
 .program-card:hover img {
-  transform: scale(1.12);
+  transform: scale(1.05);
 }
 
-/* Smooth fade carousel animation */
-.carousel-item {
-  transition: transform 1s ease, opacity 1s ease-in-out;
+.program-card h3 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff00a2;
+  text-align: center;
+}
+
+/* Carousel Arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ff00a2;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Pagination Dots */
+.carousel-indicators {
+  position: relative;
+  margin-top: 25px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ff00a2;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #ff66c4;
+  transform: scale(1.2);
 }
 
 /* Responsive */
-@media(max-width: 768px) {
-  .col-md-3 { flex: 0 0 50%; max-width: 50%; }
+@media (max-width: 768px) {
+  .program-card h3 {
+    font-size: 1rem;
+  }
+  .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+  }
 }
 
-@media(max-width: 576px) {
-  .col-md-3 { flex: 0 0 100%; max-width: 100%; }
-}
 
 /* .....................FOOTER SECTION.................................. */
 

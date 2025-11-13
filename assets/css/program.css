@@ -1,253 +1,259 @@
-/* ====================================
-   STICKY FILTER BAR
-==================================== */
-.bd-sticky-filter {
-  position: sticky;
-  top: 80px; /* adjust depending on your navbar height */
-  z-index: 99;
-  background: #fffbee;
-  transition: all 0.4s ease;
-}
-
-/* When scrolling, make it compact */
-.bd-sticky-filter.scrolled {
-  padding: 10px 20px;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(247, 183, 49, 0.4);
-  background: #fff8d4;
-  transform: scale(0.98);
-}
-
-/* ====================================
-   FILTER & SEARCH (same as before)
-==================================== */
+/* ================================
+   🌼 Program Filter Area (Sticky)
+================================ */
 .bd-program-filter-area {
+  position: sticky;         /* ✅ Makes it stay in view when scrolling */
+  top: 0;                   /* ✅ Sticks to the top of its container */
+  z-index: 1000;            /* ✅ Keeps it above other elements */
+  background-color: #fff8fc; /* soft background to match theme */
+  padding: 15px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  flex-wrap: wrap;
-  padding: 15px 25px;
-  border-radius: 50px;
-  box-shadow: 0 5px 20px rgba(247, 183, 49, 0.2);
+  box-shadow: 0 2px 10px rgba(255, 0, 162, 0.15);
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
-.bd-search-input {
-  padding: 10px 20px;
-  width: 250px;
-  border: 2px solid #f7b731;
-  border-radius: 25px;
+/* Search input style */
+.bd-program-filter-area .bd-search-input {
+  flex: 1;
+  max-width: 350px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
   font-size: 16px;
-  color: #333;
   outline: none;
   transition: all 0.3s ease;
+  background-color: #fff;
 }
 
-.bd-search-input:focus {
-  box-shadow: 0 0 10px rgba(247, 183, 49, 0.4);
+.bd-program-filter-area .bd-search-input:focus {
+  border-color: #ff00a2;
+  box-shadow: 0 0 5px rgba(255, 0, 162, 0.3);
 }
 
-.bd-filter-select {
-  padding: 10px 15px;
-  border-radius: 25px;
-  border: 2px solid #f7b731;
-  background: #fff;
+/* Dropdown filter style */
+.bd-program-filter-area .bd-filter-select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background-color: #fff;
   color: #333;
-  font-size: 16px;
   transition: all 0.3s ease;
 }
 
-.bd-filter-select:hover {
-  background: #f7b731;
-  color: #fff;
-}
-.single_row{
-    display: contents;
-    flex-direction: row;
-}
-/* ...........................check */
-/* =======================================
-   🐝 PROGRAM SECTION STYLING
-======================================= */
-.bd-program-area {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #fffdf5 0%, #fffbee 100%);
+.bd-program-filter-area .bd-filter-select:hover {
+  border-color: #ff00a2;
 }
 
-/* Section title */
-.bd-section-title-wrapper h2 {
-  font-size: 42px;
-  font-weight: 800;
-  color: #222;
-  margin-bottom: 10px;
+/* 📱 Responsive adjustments */
+@media (max-width: 768px) {
+  .bd-program-filter-area {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .bd-program-filter-area .bd-search-input,
+  .bd-program-filter-area .bd-filter-select {
+    width: 100%;
+  }
 }
 
-.bd-section-title-wrapper p {
-  font-size: 16px;
-  color: #666;
-  max-width: 500px;
-}
-
-/* =======================================
-   🧭 SWIPER NAVIGATION BUTTONS
-======================================= */
-.bd-swiper-navigation {
+/* ...........More program Sections................. */
+.single_row {
   display: flex;
-  justify-content: flex-end;
-  gap: 12px;
+  flex-wrap: wrap; /* allows wrapping into multiple rows */
+  justify-content: center; /* centers the cards horizontally */
+  gap: 30px; /* spacing between cards */
 }
 
-.bd-swiper-navigation button {
-  background: #ffbe33;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(247, 183, 49, 0.4);
+/* Each program card */
+.single_row .swiper-slide {
+  flex: 0 0 calc(50% - 30px); /* 2 cards per row (minus the gap) */
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bd-swiper-navigation button:hover {
-  background: #ffce66;
-  transform: scale(1.1);
+/* Hover animation for cards */
+.single_row .swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 0, 162, 0.3);
 }
 
-/* =======================================
-   📚 PROGRAM CARD
-======================================= */
-.bd-program {
-  position: relative;
-  background: #fff;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
+/* Make sure cards are responsive */
+@media (max-width: 992px) {
+  .single_row .swiper-slide {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+/* On smaller devices (mobile) show one card per row */
+@media (max-width: 600px) {
+  .single_row .swiper-slide {
+    flex: 0 0 100%;
+  }
+}
+
+/* Optional: spacing between sections */
+.bd-program-area {
+  background-color: #fff8fc; /* soft preschool tone */
+  padding: 70px 0 120px 0;
+}
+
+.more_programs h2 {
   text-align: center;
+  color: #ff00a2;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
 }
 
-.bd-program:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 35px rgba(247, 183, 49, 0.3);
+.program_para {
+  text-align: center;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Thumbnail image */
-.bd-program-thumb-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-bottom: 5px solid #f7b731;
-  border-radius: 25px 25px 0 0;
-}
-
-.bd-program-thumb img {
-  width: 100%;
-  height: 580px;
-  object-fit: cover;
-  transition: all 0.4s ease;
-}
-
-.bd-program:hover .bd-program-thumb img {
-  transform: scale(1.05);
-  filter: brightness(1.05);
-}
-
-/* Decorative SVG shape */
-.bd-program-shape svg {
-  position: absolute;
-  bottom: -20px;
-  right: 10px;
-  opacity: 0.8;
-  animation: floatWave 4s ease-in-out infinite;
-}
-
-@keyframes floatWave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* =======================================
-   🧾 PROGRAM CONTENT
-======================================= */
+/* .................... for beutiful alignment ........... */
+/* ================================
+   🌸 Program Content Card Styling
+================================ */
 .bd-program-content {
-  padding: 25px 20px 10px;
+  text-align: center;          /* Center align text */
+  background: #fff8fc;         /* Soft light-pink background */
+  padding: 25px 20px;
+  border-radius: 20px;         /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(255, 0, 162, 0.15); /* Subtle pink shadow */
+  transition: all 0.3s ease;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover effect for subtle lift */
+/*  */
+
+/* Program title style */
+.bd-program-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff00a2;             /* Pink theme */
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .bd-program-title a {
-  font-size: 20px;
-  font-weight: 700;
-  color: #333;
+  text-decoration: none;
+  color: #ff00a2;
   transition: color 0.3s ease;
+  cursor: pointer;
 }
 
 .bd-program-title a:hover {
-  color: #f7b731;
+  color: #ff66c4;   
+  cursor: pointer;          /* Lighter hover pink */
 }
 
+/* Paragraph style */
 .bd-program-content p {
-  color: #555;
-  font-size: 15px;
+  font-size: 16px;
+  color: #444;
   line-height: 1.6;
-  margin-top: 10px;
+  margin: 0 auto;
+  max-width: 90%;
+  cursor: pointer;
 }
 
-/* =======================================
-   🕒 PROGRAM INFO FOOTER
-======================================= */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bd-program-content {
+    padding: 20px 15px;
+  }
+  .bd-program-title {
+    font-size: 20px;
+  }
+  .bd-program-content p {
+    font-size: 15px;
+  }
+}
+/* .........box model........... */
+
 .bd-program-info-wrapper {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: linear-gradient(90deg, #f7b731, #ffd972);
-  color: #fff;
-  padding: 15px 10px;
-  border-radius: 0 0 25px 25px;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 15px;
+  background: #fff;                 /* clean white background */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(255, 0, 162, 0.15);
+  padding: 20px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.bd-program-info-title {
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
+/* Add subtle hover effect */
+.bd-program-info-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(255, 0, 162, 0.25);
+  cursor: pointer;
+}
+
+/* Each info box */
+.bd-program-info {
+  flex: 1;                          /* equal width for each box */
+  background: #fff0f8;              /* soft pink pastel */
+  border: 2px solid #ffe0f1;
+  border-radius: 12px;
   text-align: center;
+  padding: 15px 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* =======================================
-   ✨ ANIMATIONS
-======================================= */
-.bd-program:hover .bd-program-shape svg {
-  transform: rotate(5deg) scale(1.05);
-  transition: all 0.4s ease;
-}
-.more_programs{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: palevioletred;
-    font-size: 50px;
-    font-weight: bolder;
-}
-      .program_para{
-        display: flex;
-        justify-content: center;
-      }
-
-/* =======================================
-   📱 RESPONSIVE
-======================================= */
-@media (max-width: 992px) {
-  .bd-section-title-wrapper h2 {
-    font-size: 32px;
-  }
-  .bd-program-thumb img {
-    height: 220px;
-  }
+/* Hover for individual boxes */
+.bd-program-info:hover {
+  background: #ffedf8;
+  border-color: #ff00a2;
+  transform: scale(1.03);
+  cursor: pointer;
 }
 
+/* Title text inside each box */
+.bd-program-info-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff00a2;
+  margin-bottom: 5px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.bd-program-info-title span {
+  color: #333;
+  font-weight: 500;
+  display: block;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .bd-program-info-wrapper {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+  }
+
+  .bd-program-info {
+    padding: 12px;
   }
 }

@@ -13,6 +13,8 @@
  
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
   
 
 
@@ -62,7 +64,7 @@
                         <i class="fas fa-envelope"></i>
                       </div>
                       <div class="mail">
-                        <p><a href="mailto:buzzybeecare@gmail.com">buzzybeecare@gmail.com</a></p>
+                        <p><a href="mailto:buzzybeecalicut@gmail.com">buzzybeecalicut@gmail.com</a></p>
                       </div>
                     </div>
                   </div>
@@ -86,7 +88,7 @@
       <li><a href="./about.html" class="dactive">About Us</a></li>
       <li><a href="./programs.html" class="dactive">Programs</a></li>
       <li><a href="./gallery.html" class="dactive">Gallery</a></li>
-      <li><a href="./admissions.html" class="dactive">Admissions</a></li>
+      <li><a href="./admissions.html" class="dactive">Activity</a></li>
       <li><a href="./contact.html" class="dactive">Contact</a></li>
     </ul>
     </div>
@@ -106,19 +108,23 @@
 <!--.............................................. header area end here............................................................................................. -->
  <!-- main area start here  -->
    <main>
-        <!-- main area start here  -->
+       
     
-      <section class="breadcrumb-section">
-         <img src="./assets/img/gallery/pexels-yankrukov-8613121.jpg" alt="">
-        <ol class="breadcrumb">
-        <!-- <img src="./assets/img/st,small,507x507-pad,600x600,f8f8f8.u3.jpg" alt="bee" class="bee-fly-form"> -->
 
-            <li class="breadcrumb-item"><a href="index.html" style="color: rgb(237, 6, 237);height:1200px;font: bold; text-decoration: none;">Home</a></li>
-          <!-- <li class="breadcrumb-item active" aria-current="page" style="color: white;"></li>
-          -->
-            </ol>
-        
-    </section>
+      <section class="breadcrumb-section">
+  <img src="./assets/img/gallery/pexels-yankrukov-8613121.jpg" alt="Breadcrumb Background">
+
+  <div class="breadcrumb-overlay">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      </li>
+      
+    </ol>
+  </div>
+</section>
+<br>
+
 
        <!-- promotion area start here  -->
       <section class="bd-promotion-area pb-60 pt-120" id="bd-promotion-area">
@@ -140,14 +146,19 @@
                </div>
                                 <div class="col-xl-6 col-lg-6">
                   <div class="bd-promotion mb-60 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+
+
                      <div class="bd-section-title-wrapper mb-35">
-                        <h2 class="bd-section-title mb-10" style="color: dark palevioletred;">Best for Your Kids</h2>
+                        <h2 class="bd-section-title mb-10" >Best for Your Kids</h2>
                         <p>Our pedagogical philosophy is inspired by international best practices in early years education.<br />
 8 +years of inspired learning&nbsp;10:1 &nbsp;Ratio</p>
 
 <div>&nbsp;</div>
                         </p>
                      </div>
+
+
+
                      <div class="bd-promotion-counter-wrapper mb-40" style="cursor: pointer;">
                         <div class="bd-promotion-counter">
                            <div class="bd-promotion-counter-number">
@@ -178,118 +189,107 @@
                         </div>
                      </div>
                    
-                     <!-- <div class="bd-promotion-btn-wrapper flex-wrap">
-                        <div class="bd-promotion-btn">
-                           <a href="https://cocodenslittlescholars.com/about-us" class="bd-btn">
-                              <span class="bd-btn-inner">
-                                 <span class="bd-btn-normal">View More</span>
-                                 <span class="bd-btn-hover">View More</span>
-                              </span>
-                           </a>
-                        </div> -->
-                        <!-- <div class="bd-promotion-btn-2 bd-pulse-btn btn-2">
-                           <a href="#" class="popup-video"><i
-                                 class="flaticon-play-button"></i> Promotional Video</a>
-                        </div> -->
-                     <!-- </div> -->
+               
                   </div>
                </div>
             </div>
          </div>
       </section>
-      <!-- promotion area end here  -->
+      <!-- ............................promotion area end here  ................................-->
        <!-- ...........................programs area starts here............................. -->
-   <section class="program-area pt-80 pb-80">
-  <div class="container">
-    <div class="text-center mb-4">
-      <h2 class="section-title" style="color: palevioletred;">Our Programs</h2>
-      <br>
+  
+<br>
+   <!-- Carousel Section -->
+<section class="bd-program-carousel pt-70 pb-120">
+  <div class="container text-center">
+    <h2 class="section-title mb-4">Our Programs</h2>
       <p>At Buzzy bee , we have designed programs for children aged 1 year 6 months to 10 years</p>
-    </div>
 
-    <div id="multiCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="multiCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+      
+      <!-- Pagination Dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#multiCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#multiCarousel" data-bs-slide-to="1"></button>
+      </div>
+
+      <!-- Carousel Inner -->
       <div class="carousel-inner">
 
-        <div class="carousel-item active" style="cursor: pointer;">
-          <div class="row g-3">
-
-
-
-
-            <div class="col-md-3 col-6" >
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img1.jpg" class="w-100">
-                <div> 
-                  <br>
-               <h3>The Tod's</h3>
+                <img src="./assets/img/program/program_img1.jpg" class="w-100" alt="The Tod's">
+                <h3>The Tod’s</h3>
               </div>
-              </div>
-              
             </div>
             <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img2.jpg" class="w-100">
-                <div>  <br>
-              <h3>The little Tod's</h3></div>
+                <img src="./assets/img/program/program_img2.jpg" class="w-100" alt="The Little Tod's">
+                <h3>The Little Tod’s</h3>
               </div>
-            
             </div>
             <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img4.jpg" class="w-100">
-                <div> <br>
-              <h3>The little Scholars</h3></div>
+                <img src="./assets/img/program/program_img4.jpg" class="w-100" alt="The Little Scholars">
+                <h3>The Little Scholars</h3>
               </div>
-             
             </div>
             <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img5.jpg" class="w-100">
-<div> <br>
-              <h3>Integrated Elementary Program</h3></div>
+                <img src="./assets/img/program/program_img5.jpg" class="w-100" alt="Integrated Elementary Program">
+                <h3>Integrated Elementary Program</h3>
               </div>
-             
             </div>
           </div>
         </div>
 
-        <!-- <div class="carousel-item">
-          <div class="row g-3">
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
             <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img2.jpg" class="w-100">
+                <img src="./assets/img/program/program_img2.jpg" class="w-100" alt="">
+                <h3>Art & Play</h3>
               </div>
             </div>
             <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img4.jpg" class="w-100">
+                <img src="./assets/img/program/program_img4.jpg" class="w-100" alt="">
+                <h3>Creative Learners</h3>
               </div>
             </div>
             <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img5.jpg" class="w-100">
+                <img src="./assets/img/program/program_img5.jpg" class="w-100" alt="">
+                <h3>Joyful Juniors</h3>
               </div>
             </div>
             <div class="col-md-3 col-6">
               <div class="program-card">
-                <img src="./assets/img/program/program_img1.jpg" class="w-100">
+                <img src="./assets/img/program/program_img1.jpg" class="w-100" alt="">
+                <h3>Fun Explorers</h3>
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
 
       </div>
 
+      <!-- Navigation Buttons -->
       <button class="carousel-control-prev" type="button" data-bs-target="#multiCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#multiCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
-
     </div>
   </div>
 </section>
+
+  
 
 
 
@@ -298,7 +298,7 @@
 
  </main>
 
-
+<br>
   <!-- ..................................................................................................................................... -->
    <!-- footer area start -->
   <footer>

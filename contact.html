@@ -12,13 +12,16 @@
 
 
    <!-- Font Awesome Icons -->
+   
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
 
    <link rel="stylesheet" href="assets/img/OIP.jpeg">
    <link rel="stylesheet" href="assets/css/indexStyle.css">
    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
 
 </head>
@@ -61,7 +64,7 @@
                                     <i class="fas fa-envelope"></i>
                                  </div>
                                  <div class="mail">
-                                    <p><a href="mailto:support@cocodens.com">support@cocodens.com</a></p>
+                                    <p><a href="mailto:buzzybeecalicut@gmail.com">buzzybeecalicut@gmail.com</a></p>
                                  </div>
                               </div>
                            </div>
@@ -85,7 +88,7 @@
                   <li><a href="./about.html" class="dactive">About Us</a></li>
                   <li><a href="./programs.html" class="dactive">Programs</a></li>
                   <li><a href="./gallery.html" class="dactive">Gallery</a></li>
-                  <li><a href="./admissions.html" class="dactive">Admissions</a></li>
+                  <li><a href="./admissions.html" class="dactive">Activity</a></li>
                   <li><a href="./contact.html" class="active">Contact</a></li>
                </ul>
             </div>
@@ -106,23 +109,31 @@
 
       <!-- main area start here  -->
       <main>
-      <section class="breadcrumb-section">
-        <img src="./assets/img/gallery/pexels-kseniachernaya-8535193.jpg" alt="">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html" style="color: white;">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page" style="color: white;">Classes</li>
-        </ol>
-    </section>
-      <!-- breadcrumb area end here  -->
+          <!--.................... breadcrumb area starts here  ................-->
+   
+   <section class="breadcrumb-section">
+            <img src="./assets/img/gallery/pexels-kseniachernaya-8535193.jpg" alt="Breadcrumb Background">
 
-    
+            <div class="breadcrumb-overlay">
+               <h1 class="title_styling">Contact Us</h1>
+               <ol class="breadcrumb">
+
+                  <li class="breadcrumb-item">
+                     <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Contact Us</li>
+               </ol>
+            </div>
+         </section>
+
+         <!--.................. breadcrumb area end here  ............................-->
 
 
-         <br>
+
+
+         <!-- Address and Mobile icon section -->
          <section>
-            <!-- Contact section -->
-
-            <div class="contact-box-container">
+           <div class="contact-box-container">
                <div class="contact-box">
 
                   <h3>Center 1</h3>
@@ -133,6 +144,7 @@
                </div>
 
                <div class="contact-box">
+                  <img src="./assets/img/admission/phone.png" alt="">
 
                   <h3>Phone</h3>
                   <p>+918281456106 </p>
@@ -153,88 +165,80 @@
          </section>
          <br><br>
          <!-- .........................................Contact details &  Google Map -->
-         <div class="main_frame">
+         <div class="main_contact_googlemap">
 
-             <div class="bd-contact-map">
+            <div class="google_map">
                <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15650.841126027588!2d75.8265721!3d11.2826945!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65ea14d8b88fd%3A0xa9514b3b2e52474b!2sMalaparamba%2C%20Kozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1762325235691!5m2!1sen!2sin"
                   height="650" width="100%" style="border:0;" allowfullscreen="" loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="main_div">
-
+            <div class="contact_form">
                <div class="form">
-                  <form id="userForm" onsubmit="return validationForm()">
-                     <p id="output"> </p>
-                     <h1 style="color: #ff00a2;">Contacts Us Right Here</h1>
+                  <form id="userForm">
 
-                     <br><br>
-                     <!-- ........................... -->
-           <div class="new_class_form">
-                     <div class="name">
-                        <div class="first_name">
-                           <div> <label for="firstname">First Name</label></div>
-                           <div> <input type="text" name="firstname" id="firstname" placeholder="Enter your first name">
+                     <p id="output"></p>
+                     <h1 style="color: #ff00a2;">Contact Us Right Here</h1>
+
+                     <div class="new_class_form">
+
+                        <div class="name">
+                           <div class="first_name">
+                              <label for="firstname">First Name</label>
+                              <input type="text" name="firstname" id="firstname" placeholder="Enter your first name">
+                              <span class="error" id="firstnameError"></span>
                            </div>
-                           <div><span class="error" id="firstnameError"> </span></div>
-                        </div>
-                        <div class="last_name">
-                           <div> <label for="lastname">Last Name</label></div>
-                           <div><input type="text" name="lastname" id="lastname" placeholder="Enter the last name">
+
+                           <div class="last_name">
+                              <label for="lastname">Last Name</label>
+                              <input type="text" name="lastname" id="lastname" placeholder="Enter your last name">
+                              <span class="error" id="lastnameError"></span>
                            </div>
-                           <div><span class="error" id="lastnameError"> </span></div>
+                        </div>
+
+                        <div class="email">
+                           <label for="email">Email Address</label>
+                           <input type="email" name="email" id="email" placeholder="Enter your email address">
+                           <span class="error" id="emailError"></span>
+                        </div>
+
+                        <div class="phone">
+                           <label for="phone">Phone Number</label>
+                           <input type="tel" name="phone" id="phone" pattern="\d{10}" maxlength="10"
+                              placeholder="Please enter your phone number">
+                           <span class="error" id="phoneError"></span>
+                        </div>
+
+                        <div class="message">
+                           <label for="message">Your Feedback:</label>
+                           <textarea id="message" name="user_feedback" placeholder="Enter your main text here..."
+                              rows="6" cols="50"></textarea>
+                           <span class="error" id="messageError"></span>
+                        </div>
+
+                        <div class="submitt">
+                           <input type="submit" id="submit" value="Submit"
+                              style="background-color: rgb(255, 0, 140); color: white; cursor: pointer; border: none;">
                         </div>
 
                      </div>
-                     <br>
-
-                     <!-- ............................. -->
-                     <div class="email">
-
-                        <div><label for="email">Email Address</label></div>
-                        <div><input type="email" name="email" id="email" class="email"
-                              placeholder="Enter your email address"></div>
-                        <div><span class="error" id="emailError"> </span></div>
-                     </div>
-
-                     <br>
-
-                     <!-- ............................. -->
-                     <div class="phone">
-                        <div> <label for="Phone">Phone Number</label></div>
-                        <div><input type="number" name="Phone" id="phone" class="phone"
-                              placeholder="Please enter the phone number "></div>
-                        <div><span class="error" id="phonrError"> </span></div>
-                     </div>
-                     <br>
-
-
-
-                     <!-- ....................................... -->
-                     <div class="message">
-                        <div> <label for="feedback">Your Feedback:</label></div>
-                        <div><textarea id="message" name="user_feedback"
-                              placeholder="        Enter your main text here..." rows="6" cols="50"></textarea></div>
-                        <div><span class="error" id="messageError"> </span></div>
-                     </div>
-                     <br>
-                     <div class="submitt">
-                        <input type="submit" value="Submit" placeholder="Send now"
-                           style="background-color:rgb(255, 0, 140);color: white; cursor: pointer; border: none;">
-
-                     </div>
-
-                 </div>
+                  </form>
                </div>
             </div>
 
-<div>
-   <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="" height="800px" width="auto">
-</div>
+
+          
 
 
-           
          </div>
+  <section class="image-gallery">
+  <div class="gallery-container">
+    <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Happy kids learning" />
+    <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Fun preschool activities" />
+    <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Buzzy Bee classroom" />
+  </div>
+</section>
+
 
 
       </main>
@@ -356,6 +360,11 @@
          </div>
       </footer>
       <!-- footer area end -->
+      >
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      <script src="./assets/js/contact.js"></script>
+
+
 
       <script>
          function toggleMenu() {
@@ -369,7 +378,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
          crossorigin="anonymous"></script>
-         <script src="./assets/js/contact.js"></script>
+
 
 
 </body>

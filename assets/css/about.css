@@ -153,13 +153,7 @@
   animation: waveLogo 3s infinite ease-in-out;
 }
 
-/* Rainbow Hover Effect */
-.rainbow-hover:hover {
-  animation: rainbowGlow 3s linear infinite;
-  background: yellow;
-  color: #00ff15;
-  cursor: pointer;
-}
+
 
 /* Titles & Text */
 .bd-feature-title {
@@ -189,13 +183,7 @@
 }
 
 /* Animations */
-@keyframes rainbowGlow {
-  0% { box-shadow: 0 0 15px red; }
-  25% { box-shadow: 0 0 15px orange; }
-  50% { box-shadow: 0 0 15px yellow; }
-  75% { box-shadow: 0 0 15px green; }
-  100% { box-shadow: 0 0 15px blue; }
-}
+
 
 @keyframes waveLogo {
   0%, 100% { transform: rotate(0deg); }
@@ -222,383 +210,378 @@
 }
 
 
-/* ................Features area ends......... */
+/* ................Features area ends........................ */
 
+/* ............... Our Best Staffs Section........................ */
 
-/*--------------------------------
-  TEACHER AREA STYLES
-/* ================================
-   TEACHER AREA
-===================================*/
-.bd-teacher-area {
-  position: relative;
-  background: #fff;
-  overflow: hidden;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fffafc;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.bd-teacher {
-  background: #ffffff;
-  border-radius: 20px;
+/* ............Section Background ...........*/
+.bd-teacher-area {
+  background: linear-gradient(135deg, #fff7fb 0%, #ffeaf5 100%);
+  padding: 100px 0;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ......................Section Title ..............*/
+.bd-section-title-wrapper {
+  max-width: 850px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.bd-section-title {
+  font-size: 44px;
+  font-weight: 800;
+  color: #ff00a2;
+  margin-bottom: 18px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.bd-section-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff00a2, #ff7fcf);
+  border-radius: 10px;
+  margin: 12px auto 0;
+}
+
+.bd-section-title-wrapper p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.8;
+}
+
+
+/* 
+   ..............Teachers Row (Single Row Responsive).....................*/
+.teachers_row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;         /* Horizontal scroll for smaller screens */
+  scroll-behavior: smooth;  /* Smooth horizontal scrolling */
+  padding: 20px 10px;
+  justify-content: flex-start;
+  scrollbar-width: thin;
+  scrollbar-color: #ff00a2 #ffe8f5;
+}
+
+/*..... Scrollbar Styling (for Chrome, Edge, Safari)............ */
+.teachers_row::-webkit-scrollbar {
+  height: 10px;
+}
+
+.teachers_row::-webkit-scrollbar-track {
+  background: #ffe8f5;
+  border-radius: 10px;
+}
+
+.teachers_row::-webkit-scrollbar-thumb {
+  background: #ff00a2;
+  border-radius: 10px;
+}
+
+/* .......................Teacher Card ...................*/
+.bd-teacher {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(255, 0, 162, 0.15);
   transition: all 0.4s ease;
   overflow: hidden;
-  padding: 20px;
+  text-align: center;
+  min-width: 250px;   /* ensures same width for scroll cards */
+  flex: 0 0 auto;     /* prevents shrinking */
 }
 
 .bd-teacher:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 0, 162, 0.25);
 }
 
-.bd-teacher-thumb {
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 20px;
-}
-
+/* ....................Image......................... */
 .bd-teacher-thumb img {
   width: 100%;
-  height: 100%;
+  height: 280px;
   object-fit: cover;
-  transition: all 0.5s ease;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: transform 0.4s ease, filter 0.3s ease;
 }
 
 .bd-teacher:hover .bd-teacher-thumb img {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.05);
+  filter: brightness(0.9);
 }
 
+/* ...................... Content .......................*/
 .bd-teacher-content-wrapper {
-  padding: 10px 0;
+  padding: 18px;
 }
 
 .bd-teacher-title a {
-  color: #222;
-  font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff00a2;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .bd-teacher-title a:hover {
-  color: #f7b731;
+  color: #ff7fcf;
 }
 
 .bd-teacher-des {
-  display: block;
-  color: #666;
   font-size: 15px;
+  color: #666;
   margin-top: 5px;
+  font-style: italic;
 }
 
-/* ================================
-   SOCIAL ICONS
-===================================*/
+/*.................. Social Icons................ */
 .bd-teacher-social ul {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 15px 0 0;
   padding: 0;
-  list-style: none;
+  margin: 15px 0;
 }
 
-.bd-teacher-social ul li a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #f7b731;
-  color: #fff;
+.bd-teacher-social a {
   width: 35px;
   height: 35px;
+  background: #ff00a2;
+  color: white;
   border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.bd-teacher-social ul li a:hover {
-  background: #222;
-  transform: scale(1.1);
-}
- 
-.teachers_row{
-display: flex;
-flex-direction: row;
-gap: 40px;
-}
-
-
-/* ================================
-   PAGINATION DOTS
-===================================*/
-.bd-teacher-pagination {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: #ddd;
-  opacity: 1;
-  border-radius: 50%;
-  margin: 0 6px;
-  transition: all 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-  background: #f7b731;
-  transform: scale(1.2);
-  box-shadow: 0 0 10px rgba(247, 183, 49, 0.6);
-}
-
-/* ================================
-   RESPONSIVE DESIGN
-===================================*/
-@media (max-width: 768px) {
-  .bd-teacher {
-    padding: 15px;
-  }
-
-  .bd-teacher-thumb {
-    width: 130px;
-    height: 130px;
-  }
-
-  .bd-teacher-title a {
-    font-size: 18px;
-  }
-}
-/* ......................TESTIMONY AREA....................... */
-/* ================================
-   TESTIMONIAL AREA BASE
-===================================*/
-.bd-testimonial-area {
-  position: relative;
-  background: linear-gradient(135deg, #f7b731 0%, #ffde7d 100%);
-  overflow: hidden;
-  color: #fff;
-}
-
-.bd-testimonial-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.08;
-  z-index: 0;
-}
-
-.bd-testimonial-wrapper {
-  position: relative;
-  z-index: 2;
-}
-
-.bd-section-title-wrapper.is-white h2 {
-  color: #fff;
-  font-weight: 700;
-  font-size: 36px;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  letter-spacing: 1px;
-  margin-bottom: 25px;
-}
-
-/* ================================
-   TESTIMONIAL BOX
-===================================*/
-.bd-testimonial {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 40px 30px;
-  position: relative;
-  backdrop-filter: blur(8px);
-  transition: all 0.5s ease;
-  overflow: hidden;
-}
-
-.bd-testimonial:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Floating glowing border animation */
-.bd-testimonial::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  border: 2px solid transparent;
-  background: linear-gradient(45deg, #fff, #f7b731, #fff) border-box;
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask-composite: destination-out;
-  animation: borderGlow 3s linear infinite;
-  z-index: -1;
-}
-
-@keyframes borderGlow {
-  0% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
-  100% { opacity: 0.6; transform: scale(1); }
-}
-
-/* ================================
-   TESTIMONIAL CONTENT
-===================================*/
-.bd-testimonial-content p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #fff;
-  font-weight: 400;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* ================================
-   RATING STARS
-===================================*/
-.bd-testimonial-rating i {
-  color: #ffed00;
-  margin-right: 4px;
-  font-size: 16px;
-  animation: starTwinkle 1.5s infinite alternate;
-}
-
-@keyframes starTwinkle {
-  from { transform: scale(1); opacity: 0.8; }
-  to { transform: scale(1.2); opacity: 1; }
-}
-
-/* ================================
-   AVATAR SECTION
-===================================*/
-.bd-testimonial-avatar {
-  margin-top: 25px;
-  gap: 15px;
-}
-
-.bd-testimonial-avatar-thumb {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid #fff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.bd-testimonial-avatar-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.bd-testimonial-avatar-title {
-  color: #fff;
-  font-weight: 600;
-  font-size: 18px;
-  text-transform: capitalize;
-}
-
-/* ================================
-   QUOTE ICON
-===================================*/
-.bd-testimonial-quote i {
-  font-size: 40px;
-  color: #fff;
-  opacity: 0.3;
-  animation: floatQuote 3s ease-in-out infinite;
-}
-
-@keyframes floatQuote {
-  0% { transform: translateY(0); opacity: 0.3; }
-  50% { transform: translateY(-8px); opacity: 0.6; }
-  100% { transform: translateY(0); opacity: 0.3; }
-}
-
-/* ================================
-   PULSE VIDEO BUTTON
-===================================*/
-.bd-testimonial-video {
-  position: absolute;
-  left: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-}
-
-.bd-testimonial-video-btn a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  color: #31f738;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  font-size: 28px;
-  position: relative;
   transition: all 0.3s ease;
+  font-size: 15px;
 }
 
-.bd-testimonial-video-btn a:hover {
-  transform: scale(1.1);
-  color: #fff;
-  background: yellow;
+.bd-teacher-social a:hover {
+  background: #ff7fcf;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(255, 0, 162, 0.3);
 }
 
-/* Pulse animation */
-.bd-pulse-btn::before {
+/* ............... Hover Glow................ */
+.bd-teacher::after {
   content: "";
   position: absolute;
-  inset: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff00a2, #ff90cc);
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+.bd-teacher:hover::after {
+  width: 70%;
+}
+
+/* ...............Responsive Layout ...............*/
+@media (max-width: 992px) {
+  .bd-teacher-thumb img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .teachers_row {
+    gap: 18px;
+  }
+  .bd-teacher {
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teachers_row {
+    gap: 15px;
+  }
+  .bd-teacher {
+    min-width: 200px;
+  }
+  .bd-teacher-thumb img {
+    height: 220px;
+  }
+}
+
+
+
+/* ..............Positive feed back Section................. */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fffafc;
+  color: #333;
+}
+
+/* .......... Video Section............. */
+.testimonial-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff3fa 0%, #ffe5f3 100%);
+  padding: 80px 20px;
+  gap: 60px;
+}
+
+/* .........Video box styling............. */
+.video-box {
+  position: relative;
+  max-width: 600px;
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.video-thumb {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 0, 162, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-box:hover .video-thumb {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(255, 0, 162, 0.3);
+}
+
+/* ......... Play button styling .......... */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ff00a2, #ff62c5);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  animation: pulseRing 2s infinite;
-  z-index: -1;
+  padding: 25px;
+  box-shadow: 0 0 0 0 rgba(255, 0, 162, 0.6);
+  animation: pulse 1.8s infinite;
 }
 
-@keyframes pulseRing {
-  0% { transform: scale(1); opacity: 0.8; }
-  70% { transform: scale(1.6); opacity: 0; }
-  100% { opacity: 0; }
+.play-icon {
+  width: 40px;
 }
 
-/* ================================
-   PAGINATION DOTS
-===================================*/
-.bd-testimonial-pagination {
-  margin-top: 40px;
+/* ......... Animation ..............*/
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 162, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 25px rgba(255, 0, 162, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 162, 0);
+  }
 }
 
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  margin: 0 6px;
+/* ......Testimonial Content........... */
+.testimonial-container {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.testimonial-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #ff00a2;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.testimonial-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff00a2, #ff93d0);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* ......... Card Style.......... */
+.testimonial-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(255, 0, 162, 0.1);
+  padding: 30px;
   transition: all 0.3s ease;
 }
 
-.swiper-pagination-bullet-active {
-  background: #fff;
-  box-shadow: 0 0 10px #fff;
-  transform: scale(1.3);
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(255, 0, 162, 0.2);
 }
 
-/* ================================
-   RESPONSIVE
-===================================*/
-@media (max-width: 992px) {
-  .bd-testimonial-video {
-    display: none;
+/* .........Paragraph............ */
+.testimonial-text {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* ..........Parent avatar section .........*/
+.testimonial-avatar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.testimonial-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #ff00a2;
+  object-fit: cover;
+}
+
+.testimonial-avatar h6 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ... Responsive..... */
+@media (max-width: 768px) {
+  .testimonial-section {
+    flex-direction: column;
+    text-align: center;
   }
-  .bd-testimonial {
-    padding: 25px 20px;
+
+  .testimonial-container {
+    max-width: 90%;
   }
-  .bd-section-title-wrapper h2 {
-    font-size: 28px;
+
+  .testimonial-title {
+    font-size: 30px;
+  }
+
+  .play-button {
+    padding: 20px;
+  }
+
+  .play-icon {
+    width: 30px;
   }
 }
