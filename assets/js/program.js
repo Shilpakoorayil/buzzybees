@@ -4,7 +4,7 @@
   const programs = document.querySelectorAll('.swiper-slide');
   const stickyFilter = document.querySelector('.bd-sticky-filter');
 
-  // 🧩 Filter + Search Logic
+  // Filter + Search Logic
   function filterPrograms() {
     const searchText = searchInput.value.toLowerCase();
     const selectedAge = filterSelect.value;
@@ -23,7 +23,7 @@
   searchInput.addEventListener('input', filterPrograms);
   filterSelect.addEventListener('change', filterPrograms);
 
-  // 🧲 Sticky bar animation on scroll
+  // Sticky bar animation on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 200) {
       stickyFilter.classList.add('scrolled');

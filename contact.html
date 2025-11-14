@@ -12,7 +12,7 @@
 
 
    <!-- Font Awesome Icons -->
-   
+
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
    <link href="https://pro.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
@@ -21,7 +21,7 @@
    <link rel="stylesheet" href="assets/img/OIP.jpeg">
    <link rel="stylesheet" href="assets/css/indexStyle.css">
    <link rel="stylesheet" href="assets/css/contact.css">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
 
 </head>
@@ -82,6 +82,11 @@
             <div class="logo">
                <img src="assets/img/buzzy-bee-preschool-1500544792-3.jpg" alt="Logo">
             </div>
+
+            <!-- While loggined User name should display on left side of the screen -->
+            </div>
+            <p id="welcomeUser" style="font-size:20px; font-weight:bold; color:#ff9800; margin-left:20px;">
+            </p>
             <div>
                <ul class="nav-links" id="navLinks">
                   <li><a href="./index.html" class="dactive">Home</a></li>
@@ -92,6 +97,17 @@
                   <li><a href="./contact.html" class="active">Contact</a></li>
                </ul>
             </div>
+
+            <!-- LOGOUT BUTTON -->
+            <a id="logoutBtn" class="btn-super logout" style="display:none;">
+               Logout
+            </a>
+
+            <!-- LOGIN BUTTON -->
+            <a id="loginBtn" class="btn-super login" href="./login.html">
+               Login
+            </a>
+
             <div class="getIntouch-btn"> <a href="./contact.html" class="bd-btn">
                   <span class="bd-btn-inner">
                      <span class="bd-btn-normal">Get In Touch</span>
@@ -109,9 +125,9 @@
 
       <!-- main area start here  -->
       <main>
-          <!--.................... breadcrumb area starts here  ................-->
-   
-   <section class="breadcrumb-section">
+         <!--.................... breadcrumb area starts here  ................-->
+
+         <section class="breadcrumb-section">
             <img src="./assets/img/gallery/pexels-kseniachernaya-8535193.jpg" alt="Breadcrumb Background">
 
             <div class="breadcrumb-overlay">
@@ -133,7 +149,7 @@
 
          <!-- Address and Mobile icon section -->
          <section>
-           <div class="contact-box-container">
+            <div class="contact-box-container">
                <div class="contact-box">
 
                   <h3>Center 1</h3>
@@ -229,17 +245,17 @@
             </div>
 
 
-          
+
 
 
          </div>
-  <section class="image-gallery">
-  <div class="gallery-container">
-    <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Happy kids learning" />
-    <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Fun preschool activities" />
-    <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Buzzy Bee classroom" />
-  </div>
-</section>
+         <section class="image-gallery">
+            <div class="gallery-container">
+               <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Happy kids learning" />
+               <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Fun preschool activities" />
+               <img src="assets/img/7568bf7f-9874-4e90-84bc-c7b3e570ea61.png" alt="Buzzy Bee classroom" />
+            </div>
+         </section>
 
 
 
@@ -289,10 +305,9 @@
                               <div class="bd-footer-list">
                                  <ul>
                                     <li><a href="./about.html">About</a></li>
-
-                                    <li><a href="./admissions.html">Admission</a></li>
-                                    <li><a href="./gallery.html">Gallery</a></li>
                                     <li><a href="./programs.html">Programs</a></li>
+                                    <li><a href="./gallery.html">Gallery</a></li>
+                                    <li><a href="./admissions.html">Activity</a></li>
                                     <li><a href="./contact.html">Contact</a></li>
                                  </ul>
                               </div>
@@ -333,7 +348,7 @@
                                        Near polytechnic
                                        Malaparamba</li>
                                     <li>
-                                      <i class="fa-solid fa-phone"></i>
+                                       <i class="fa-solid fa-phone"></i>
                                        <a href="tel:8281456106">+918281456106</a>
                                     </li>
 
@@ -362,24 +377,20 @@
          </div>
       </footer>
       <!-- footer area end -->
-      >
+  
+
       <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
       <script src="./assets/js/contact.js"></script>
-
-
-
-      <script>
-         function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("show");
-         }
-
-      </script>
+      <script src="./gallery.json"></script>
+      <script src="./assets/js/gallery.js"></script>
+      <script src="./assets/js/index.js"></script>
 
       <!-- ........................bootstrap link..................................................... -->
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
          crossorigin="anonymous"></script>
+
 
 
 

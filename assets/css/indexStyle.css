@@ -290,9 +290,7 @@
 }
 
 /* ...........................promotion................................... */
-/* ================================
-   🌈 Section Title Styling
-================================ */
+
 .bd-section-title-wrapper {
   text-align: left; /* use center if needed */
   max-width: 650px;

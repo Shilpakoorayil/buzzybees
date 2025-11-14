@@ -6,6 +6,9 @@
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("show");
 }
+
+
+
 // .......................................
 let user = localStorage.getItem("buzzyUser");
 
@@ -20,6 +23,7 @@ if (user) {
 
 }
 
+
 // Auto Logout after 10 minutes
 setTimeout(() => {
   localStorage.removeItem("buzzyUser");
@@ -29,7 +33,6 @@ setTimeout(() => {
 // Manual Logout
 document.getElementById("logoutBtn").onclick = function() {
   localStorage.removeItem("buzzyUser");
-  localStorage.removeItem("isAdmin");
   window.location.href = "login.html";
 };
 

@@ -1,166 +1,180 @@
-/* ================================================
-   🐝 Buzzy Bee - Program Routine Area Styles
-   ================================================= */
+/* =======================
+   SECTION STYLING
+======================= */
 .bd-routine-area {
-  background: linear-gradient(180deg, #fff9c4 0%, #fff59d 100%);
   position: relative;
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 70px;
-  overflow: hidden;
-  cursor: pointer;
+  background: #fffdf5;   /* soft light yellow theme */
 }
 
-/* Honey wave shape (optional bottom decoration) */
-.bd-routine-area::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  /* background: url("assets/img/shape/wave-section-break.png") no-repeat center/cover; */
-  opacity: 0.4;
-  cursor: pointer;
-}
-
-/* Section title */
-.bd-section-title-wrapper h2.bd-section-title {
-  font-family: 'Fredoka One', cursive;
-  color: #f9a825;
-  font-size: 2rem;
-  margin-bottom: 15px;
-  cursor: pointer;
+/* =======================
+   TITLE AREA
+======================= */
+.bd-section-title-wrapper h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
 }
 
 .bd-section-title-wrapper p {
-  color: #6d4c41;
   font-size: 16px;
-  line-height: 1.6;
-  cursor: pointer;
+  color: #555;
+  margin-top: 10px;
 }
 
-/* Routine tables */
-.bd-routine-table {
-  background: #fffbea;
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  transition: 0.3s ease;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.bd-routine-table:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-}
-
-/* Table styling */
+/* =======================
+   TABLE STYLING
+======================= */
 .bd-routine-table table {
   width: 100%;
-  border-collapse: collapse;
-  cursor: pointer;
-}
-
-.bd-routine-table thead {
-  background-color: #ffeb3b;
-  color: #4e342e;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.08);
 }
 
 .bd-routine-table th {
-  padding: 14px 10px;
-  text-align: left;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
+  background: #ffcc00;
+  color: #fff;
+  font-size: 18px;
+  padding: 14px;
+  text-align: center;
 }
 
 .bd-routine-table td {
-  padding: 12px 10px;
-  border-bottom: 1px solid #f5f5f5;
+  padding: 14px;
   font-size: 15px;
-  color: #f57f1e;
-  cursor: pointer;
+  color: #444;
 }
 
-.bd-routine-table tr:last-child td {
-  border-bottom: none;
-  cursor: pointer;
-}
-
-/* Add soft alternating row color */
+/* Alternate row color */
 .bd-routine-table tbody tr:nth-child(even) {
-  background-color: #eadc44;
+  background: #fff7d9;
 }
 
-/* Hover row effect */
+/* Hover effect */
 .bd-routine-table tbody tr:hover {
-  background: #fff9c4;
+  background: #ffeaa7;
+  transition: 0.3s;
+}/* --------------------------
+   Routine Table Styling
+--------------------------- */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.table thead th {
+  background: #ffbb00;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  padding: 15px;
+  border: none;
+  letter-spacing: 1px;
+}
+
+/* Table Rows */
+.table tbody td {
+  padding: 14px;
+  font-size: 16px;
+  color: #444;
+  border: none;
+}
+
+/* Striped Effect */
+.table-striped tbody tr:nth-child(even) {
+  background-color: #fff6d6; /* light honey */
+}
+
+/* Row Hover Effect */
+.table tbody tr:hover {
+  background-color: #ffe8a4;
   transition: 0.3s;
 }
 
-/* Bee icon bullet (optional for extra cuteness 🐝) */
-.bd-routine-table td:first-child::before {
-  content: "🐝 ";
-  font-size: 16px;
-  margin-right: 4px;
-  opacity: 0.8;
+/* Left Column (Hour) styling */
+.table tbody td:first-child {
+  font-weight: 600;
+  color: #333;
 }
 
 /* Responsive */
-@media (max-width: 991px) {
-  .bd-routine-table {
-    margin-bottom: 30px;
+@media (max-width: 600px) {
+  .table thead th {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .table tbody td {
+    font-size: 14px;
+    padding: 10px;
   }
 }
 
-@media (max-width: 576px) {
-  .bd-section-title-wrapper h2.bd-section-title {
-    font-size: 1.6rem;
-  }
+
+/* =======================
+   FLYING BEE ANIMATION
+======================= */
+.bee-fly img,
+.bee-fly1 img {
+  position: absolute;
+  animation: flyBee 8s infinite linear;
 }
-/* ...................bee flying............................................. */
+
 .bee-fly {
   position: absolute;
-  top: 20%;
-  left: -100px;
-  width: 70px;
-  height: 70px;
-
-  animation: flyBee 15s linear infinite;
-  z-index: 0;
-  opacity: 0.8;
+  top: 60px;
+  left: 10%;
+  animation: floatUpDown 3s infinite ease-in-out;
 }
 
-@keyframes flyBee {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(300px, -60px) rotate(10deg); }
-  50% { transform: translate(600px, 40px) rotate(-10deg); }
-  75% { transform: translate(900px, -30px) rotate(10deg); }
-  100% { transform: translate(2000px, 2000px) rotate(0deg);  }
-}
 .bee-fly1 {
   position: absolute;
-  top: 20%;
-  left: -100px;
-  width: 70px;
-  height: 70px;
-
-  animation: flyBee1 15s linear infinite;
-  z-index: 0;
-  opacity: 0.8;
+  top: 120px;
+  right: 10%;
+  animation: floatUpDown 4s infinite ease-in-out;
 }
 
-@keyframes flyBee1 {
-  0% { transform: translate(2000px, 0PX) rotate(0deg); }
-  25% { transform: translate(900px, -30px) rotate(10deg); }
-  50% { transform: translate(200px, 500px) rotate(0deg); }
-  75% { transform: translate(900px, -30px) rotate(0deg); }
-  100% { transform: translate(1200px, 0px) rotate(0deg);  }
+/* Bee left to right movement */
+@keyframes flyBee {
+  0%   { transform: translateX(0) rotate(0deg); }
+  50%  { transform: translateX(20px) rotate(5deg); }
+  100% { transform: translateX(0) rotate(0deg); }
+}
+
+/* Bee up-down floating */
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* =======================
+   RESPONSIVE DESIGN
+======================= */
+@media (max-width: 768px) {
+  .bd-section-title-wrapper h2 {
+    font-size: 28px;
+  }
+
+  .bee-fly,
+  .bee-fly1 {
+    display: none; /* hide bees on small screen for cleanliness */
+  }
+}
+
+@media (max-width: 480px) {
+  .bd-routine-table th,
+  .bd-routine-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
