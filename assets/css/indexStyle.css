@@ -1,3 +1,40 @@
+/* Login and logout button */
+
+.btn-super {
+ 
+  padding: 20px 55px;
+  border-radius: 35px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+ 
+}
+
+/* LOGIN BUTTON STYLE */
+.btn-super.login {
+  background: #fd811b; 
+  color: #000;
+}
+.btn-super.login:hover {
+  background: #aa64a8;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* LOGOUT BUTTON STYLE */
+.btn-super.logout {
+  background: #fd811b; 
+  color: white;
+}
+.btn-super.logout:hover {
+  background: #aa64a8;
+  transform: translateY(-2px);
+}
+/* ........................................ */
 /* Header Top Background */
 
 .first_nav_theme{
@@ -69,6 +106,9 @@
   z-index: 999;
   
 }
+.logo{
+  cursor: pointer;
+}
 
 /* Logo */
 .logo img {
@@ -123,6 +163,7 @@
   background: #0c1923;
   margin: 5px 0;
   display: block;
+  text-align: center;
 }
 
 /* Responsive */
